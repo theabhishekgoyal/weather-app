@@ -1,0 +1,251 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.tab.current-tab {
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.form-container.active {
+    scale:1;
+    opacity: 1;
+    display:flex;
+}
+:root
+{
+    --colorDark1:#112D4E;
+    --colorDark2:#3F72AF;
+    --colorLight1:#DBE2EF;
+    --colorLight2:#F9F7F7;
+
+}
+body{
+    background:url(./images/bg.jpg) ;
+}
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    color: var(--colorLight2);
+   
+
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    /* margin: 15px; */
+    padding-top:15px ;
+}
+.tab-container{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    /* align-items: center; */
+    margin: 0 auto;
+    margin-top: 4rem;
+    font-size: 50px;
+    font-weight: 500;
+}
+.tab{
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    padding: 5px 8px;
+}
+.weather-container{
+
+    margin-block: 4rem;
+}
+.btn{
+color: white;
+text-transform: uppercase;
+font-size: 0.85rem;
+border-radius: 5px;
+background-color: var(--colorDark2);
+cursor: pointer;
+padding: 10px 30px;
+/* all: unset; */
+/* appearance: none;
+border: none;
+color: white; */
+}
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grant-location-container{
+    display: none;
+    flex-direction: column;
+
+}
+.grant-location-container.active{
+    display: flex;
+}
+.grant-location-container img{
+margin-bottom: 2rem;
+}
+.grant-location-container p:first-of-type{
+font-size: 1.75rem;
+font-weight: 600;
+
+}
+.grant-location-container p:last-of-type{
+font-size: 0.95rem;
+font-weight: 600;
+margin-top: 0.75rem;
+margin-bottom: 1.75rem;
+/* letter-spacing: 0.13rem; */
+
+}
+.loading-container{
+    display: none;
+}
+.loading-container.active
+{
+    display: flex;
+}
+.loading-container p{
+    text-transform: uppercase;
+}
+.user-info-container{
+    display: none;
+
+}
+.user-info-container.active{
+    display: flex;
+
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+.name p[data-CityName]{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.user-info-container img[data-weatherIcon]{
+    width: 90px;
+    height: 90px;
+}
+.name img[data-CountryIcon]{
+    width: 30px ;
+    height: 30px;
+    object-fit: contain;
+}
+.user-info-container p[data-weatherDesc]{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.user-info-container p[data-temp]
+{
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+.parameter-container
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px 20px;
+    justify-content: center;
+    margin-top:2rem ;
+    flex-wrap: wrap;
+    
+
+}
+
+.parameter{
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(19, 26, 39, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    gap: 5px 0px;
+    /* justify-content: baseline; */
+    align-items: center;
+    line-height: 25px;
+}
+.parameter img{
+    width: 50px;
+    height: 50px;
+}
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+.form-container{
+    /* display: flex; */
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 3rem;
+}
+.form-container.active{
+    display: flex;
+}
+.form-container input{
+    all: unset;
+    border-radius: 10px;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color:rgba(219, 226, 239, 0.5);
+
+
+
+}
+.form-container input::placeholder{
+    color: white;
+}
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+.form-container .btn{
+    padding: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+@media (max-width:700px) {
+    .tab-container{
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap: 1rem;
+       /* width: 2000px; */
+
+    }
+    
+}
+@media (max-width:650px) {
+    .parameter-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
